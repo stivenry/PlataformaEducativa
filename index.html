@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.E. Manuel María Mosquera | Territorio Digital</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Floating Particles Background -->
+    <canvas id="particles"></canvas>
+
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header>
+            <div class="container header-row">
+                <img src="logo.png" alt="Logo I.E. Manuel María Mosquera" class="logo">
+                <div class="header-line"></div>
+                <div class="header-info">
+                    <span class="header-sub">Institución Educativa</span>
+                    <span class="header-name">Manuel María Mosquera</span>
+                    <span class="header-loc">Puracé — Cauca</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <span class="hero-tag">RESGUARDO DE PURACÉ</span>
+                <h2 class="hero-title">
+                    <span class="t-line"><span class="t-word">Identidad</span></span>
+                    <span class="t-line"><span class="t-word">y Saber <em>Digital</em></span></span>
+                </h2>
+                <p class="hero-desc">Un puente entre la sabiduría ancestral y las fronteras de la tecnología moderna.
+                </p>
+                <div class="scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span class="scroll-text">Desliza</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider">
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- Consejos Docentes + PDF -->
+        <section class="section-consejos">
+            <div class="container">
+                <div class="tag anim-tag">01 · Concepto</div>
+                <div class="consejos-grid">
+                    <div class="consejos-text">
+                        <h3 class="heading anim-heading">Consejos<br>Docentes</h3>
+                        <p class="body-lead anim-text">La labor pedagógica en nuestro territorio digital se fundamenta
+                            en la proyección de la riqueza cultural hacia escenarios globales.</p>
+                        <p class="body-secondary anim-text">Nuestra misión es empoderar a la comunidad educativa,
+                            utilizando las herramientas tecnológicas como un lienzo para plasmar el legado del Resguardo
+                            de Puracé.</p>
+                    </div>
+                    <div class="consejos-pdf anim-media">
+                        <div class="window">
+                            <div class="window-bar">
+                                <div class="dots"><span></span><span></span><span></span></div>
+                                <span class="window-label">consejos_docentes_2026.pdf</span>
+                            </div>
+                            <div class="window-body">
+                                <iframe src="consejos_docentes_2026.pdf#toolbar=1&navpanes=1&scrollbar=1"
+                                    title="Consejos Docentes PDF" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider">
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- Video -->
+        <section class="section-video">
+            <div class="container">
+                <div class="tag anim-tag">02 · Patrimonio</div>
+                <h3 class="heading heading-center anim-heading">Saberes en Movimiento</h3>
+                <p class="video-desc anim-text">Descubre la historia, la cultura y los valores del Resguardo de Puracé a
+                    través de este material audiovisual.</p>
+                <div class="video-wrapper anim-media">
+                    <iframe src="https://www.youtube.com/embed/BS6RvXcz0dE?rel=0&modestbranding=1"
+                        title="Video Institucional" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-top">
+                    <span class="footer-tag">Desarrollado por — Grado 11°B</span>
+                    <div class="names">
+                        <span class="anim-name">Jhoan Stiven Rodríguez Yacumal</span>
+                        <span class="anim-name">Ángel Santiago Aguilar Manquillo</span>
+                        <span class="anim-name">Edinson Adrián Aguilar Jalvin</span>
+                        <span class="anim-name">Ángel Stiven Mazabuel Isiquita</span>
+                    </div>
+                    <div class="teacher-info">
+                        <span class="teacher-label">Docente:</span>
+                        <span class="teacher-name">Álvaro Stid Bolaños</span>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-year">Proyecto 2026 · Grado 11°B · Puracé, Cauca</span>
+                    <a href="https://www.iemmmrip.edu.co" class="btn-back">
+                        Volver a la página principal
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
