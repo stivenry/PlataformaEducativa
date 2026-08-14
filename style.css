@@ -34,7 +34,35 @@ body {
     cursor: none;
 }
 
-/* ========== PARTICLES CANVAS ========== */
+/* ========== BANNER SUPERIOR DE VÍDEO MP4 ========== */
+.top-video-banner {
+    width: 100%;
+    height: clamp(180px, 25vh, 320px);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.top-video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.top-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(7, 7, 7, 0.2) 0%, rgba(7, 7, 7, 0.8) 100%);
+    pointer-events: none;
+}
+
+/* ========== PARTICULAS EN CANAL FIJO ========== */
 #particles {
     position: fixed;
     top: 0;
@@ -50,7 +78,7 @@ body {
     z-index: 1;
 }
 
-/* ========== CURSOR ========== */
+/* ========== CURSOR PERSONALIZADO ========== */
 .cursor {
     width: 36px;
     height: 36px;
@@ -73,7 +101,7 @@ body {
     z-index: 10001;
 }
 
-/* ========== LAYOUT ========== */
+/* ========== CONTENEDORES ========== */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -139,7 +167,7 @@ header {
 
 /* ========== HERO ========== */
 .hero {
-    min-height: 90vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -195,7 +223,7 @@ header {
     line-height: 1.5;
 }
 
-/* Scroll Indicator */
+/* Indicador Scroll */
 .scroll-indicator {
     position: absolute;
     bottom: 3rem;
@@ -214,13 +242,10 @@ header {
 }
 
 @keyframes scrollPulse {
-
-    0%,
-    100% {
+    0%, 100% {
         opacity: 1;
         transform: scaleY(1);
     }
-
     50% {
         opacity: 0.3;
         transform: scaleY(0.6);
@@ -235,7 +260,7 @@ header {
     writing-mode: vertical-rl;
 }
 
-/* ========== DIVIDER ========== */
+/* ========== SECCIONES Y DIVISORES ========== */
 .section-divider {
     display: flex;
     justify-content: center;
@@ -249,7 +274,6 @@ header {
     opacity: 0.3;
 }
 
-/* ========== SECTIONS ========== */
 section {
     padding: clamp(5rem, 12vw, 10rem) 0;
 }
@@ -275,7 +299,6 @@ section {
     text-align: center;
 }
 
-/* ========== CONSEJOS ========== */
 .consejos-grid {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -296,7 +319,7 @@ section {
     line-height: 1.6;
 }
 
-/* ========== PDF WINDOW ========== */
+/* ========== CONTENEDOR PDF (ESTILO VENTANA) ========== */
 .window {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -331,17 +354,9 @@ section {
     border-radius: 50%;
 }
 
-.dots span:first-child {
-    background: #ff5f57;
-}
-
-.dots span:nth-child(2) {
-    background: #febc2e;
-}
-
-.dots span:last-child {
-    background: #28c840;
-}
+.dots span:first-child { background: #ff5f57; }
+.dots span:nth-child(2) { background: #febc2e; }
+.dots span:last-child { background: #28c840; }
 
 .window-label {
     font-size: 0.65rem;
@@ -363,7 +378,7 @@ section {
     border: none;
 }
 
-/* ========== VIDEO ========== */
+/* ========== CONTENEDOR YOUTUBE ========== */
 .video-desc {
     text-align: center;
     color: var(--text-dim);
@@ -394,7 +409,7 @@ section {
     border: none;
 }
 
-/* ========== FOOTER ========== */
+/* ========== FOOTER Y CRÉDITOS ========== */
 footer {
     padding: clamp(3rem, 8vw, 6rem) 0;
     background: #020202;
@@ -497,8 +512,12 @@ footer {
     transform: translateX(4px);
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== ADAPTABILIDAD MÓVIL ========== */
 @media (max-width: 768px) {
+    .top-video-banner {
+        height: 160px;
+    }
+
     .consejos-grid {
         grid-template-columns: 1fr;
     }
@@ -563,7 +582,6 @@ footer {
 }
 
 @media (hover: none) and (pointer: coarse) {
-
     .cursor,
     .cursor-dot {
         display: none !important;
