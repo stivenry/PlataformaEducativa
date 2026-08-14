@@ -1,7 +1,7 @@
-// GSAP Registration
+// Registro del plugin de Scroll
 gsap.registerPlugin(ScrollTrigger);
 
-// ========== PARTICLES BACKGROUND ==========
+// ========== FONDO DE PARTÍCULAS EN CANVAS ==========
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -54,7 +54,7 @@ function animateParticles() {
 }
 animateParticles();
 
-// ========== CURSOR ==========
+// ========== PUNTERO CURSOR DUAL ==========
 const cursor = document.querySelector('.cursor');
 const dot = document.querySelector('.cursor-dot');
 const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
@@ -74,7 +74,6 @@ if (!isMobile && cursor && dot) {
         });
     });
 
-    // Hover animations
     document.querySelectorAll('a, iframe, .window, .video-wrapper').forEach(el => {
         el.addEventListener('mouseenter', () => {
             gsap.to(cursor, { scale: 1.8, borderColor: 'rgba(76, 175, 80, 0.5)', duration: 0.3 });
@@ -87,9 +86,8 @@ if (!isMobile && cursor && dot) {
     });
 }
 
-// ========== CONTINUOUS ANIMATIONS (Loop Forever) ==========
+// ========== ANIMACIONES CONTINUAS INFINITAS ==========
 
-// Logo sutil floating
 gsap.to('.logo', {
     y: -8,
     duration: 2,
@@ -98,7 +96,6 @@ gsap.to('.logo', {
     yoyo: true
 });
 
-// Hero tag pulse
 gsap.to('.hero-tag', {
     scale: 1.03,
     duration: 2.5,
@@ -107,7 +104,6 @@ gsap.to('.hero-tag', {
     yoyo: true
 });
 
-// Dots in window bar pulse
 gsap.to('.dots span', {
     opacity: 0.5,
     duration: 1.5,
@@ -117,15 +113,20 @@ gsap.to('.dots span', {
     yoyo: true
 });
 
-// ========== PAGE ENTRY ANIMATIONS ==========
+// ========== ANIMACIONES DE ENTRADA AL Cargar LA PÁGINA ==========
 window.addEventListener('load', () => {
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    tl.from('.header-row', {
+    tl.from('.top-video-banner', {
         opacity: 0,
-        y: -30,
+        y: -50,
         duration: 1
     })
+        .from('.header-row', {
+            opacity: 0,
+            y: -30,
+            duration: 1
+        }, "-=0.6")
         .from('.logo', {
             opacity: 0,
             scale: 0.7,
@@ -155,9 +156,8 @@ window.addEventListener('load', () => {
         }, "-=0.3");
 });
 
-// ========== SCROLL ANIMATIONS (REPEATABLE) ==========
+// ========== ANIMACIONES REPETIBLES CON SCROLL ==========
 
-// Tags - slide in every time they enter viewport
 gsap.utils.toArray('.anim-tag').forEach(el => {
     gsap.from(el, {
         scrollTrigger: {
@@ -173,7 +173,6 @@ gsap.utils.toArray('.anim-tag').forEach(el => {
     });
 });
 
-// Headings - reveal up with replay
 gsap.utils.toArray('.anim-heading').forEach(el => {
     gsap.from(el, {
         scrollTrigger: {
@@ -189,8 +188,7 @@ gsap.utils.toArray('.anim-heading').forEach(el => {
     });
 });
 
-// Text paragraphs - fade in with replay
-gsap.utils.toArray('.anim-text').forEach((el, i) => {
+gsap.utils.toArray('.anim-text').forEach((el) => {
     gsap.from(el, {
         scrollTrigger: {
             trigger: el,
@@ -205,7 +203,6 @@ gsap.utils.toArray('.anim-text').forEach((el, i) => {
     });
 });
 
-// Media blocks - scale in with replay
 gsap.utils.toArray('.anim-media').forEach(el => {
     gsap.from(el, {
         scrollTrigger: {
@@ -222,7 +219,6 @@ gsap.utils.toArray('.anim-media').forEach(el => {
     });
 });
 
-// Divider lines - grow with replay
 gsap.utils.toArray('.divider-line').forEach(el => {
     gsap.from(el, {
         scrollTrigger: {
@@ -237,7 +233,6 @@ gsap.utils.toArray('.divider-line').forEach(el => {
     });
 });
 
-// Footer names - stagger with replay
 gsap.utils.toArray('.anim-name').forEach((el, i) => {
     gsap.from(el, {
         scrollTrigger: {
@@ -254,7 +249,6 @@ gsap.utils.toArray('.anim-name').forEach((el, i) => {
     });
 });
 
-// Teacher info animation
 gsap.from('.teacher-info', {
     scrollTrigger: {
         trigger: '.footer-top',
@@ -269,7 +263,6 @@ gsap.from('.teacher-info', {
     ease: "power3.out"
 });
 
-// Footer bottom - with replay
 gsap.from('.footer-bottom', {
     scrollTrigger: {
         trigger: '.footer-bottom',
@@ -283,7 +276,6 @@ gsap.from('.footer-bottom', {
     ease: "power3.out"
 });
 
-// Parallax on Hero (scrub is continuous)
 gsap.to('.hero-title', {
     scrollTrigger: {
         trigger: '.hero',
@@ -295,7 +287,6 @@ gsap.to('.hero-title', {
     opacity: 0.3
 });
 
-// Window hover interaction animations
 document.querySelectorAll('.window, .video-wrapper').forEach(el => {
     el.addEventListener('mouseenter', () => {
         gsap.to(el, {
