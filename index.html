@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I.E. Manuel María Mosquera | Territorio Digital</title>
-    <!-- Fonts -->
+    <!-- Tipografías de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,16 +16,25 @@
 
 <body>
 
-    <!-- Custom Cursor -->
+    <!-- Banner Superior de Vídeo MP4 (Bucle Continuo) -->
+    <div class="top-video-banner">
+        <video autoplay muted loop playsinline poster="logo.png">
+            <source src="tu_video_banner.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de vídeo MP4.
+        </video>
+        <div class="top-video-overlay"></div>
+    </div>
+
+    <!-- Puntero y Punto Cursor Personales -->
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
 
-    <!-- Floating Particles Background -->
+    <!-- Fondo Interactivo de Partículas -->
     <canvas id="particles"></canvas>
 
     <div id="page-wrapper">
 
-        <!-- Header -->
+        <!-- Encabezado Institucional -->
         <header>
             <div class="container header-row">
                 <img src="logo.png" alt="Logo I.E. Manuel María Mosquera" class="logo">
@@ -38,7 +47,7 @@
             </div>
         </header>
 
-        <!-- Hero -->
+        <!-- Banner Principal (Hero) -->
         <section class="hero">
             <div class="container hero-inner">
                 <span class="hero-tag">RESGUARDO DE PURACÉ</span>
@@ -55,12 +64,11 @@
             </div>
         </section>
 
-        <!-- Divider -->
         <div class="section-divider">
             <div class="divider-line"></div>
         </div>
 
-        <!-- Consejos Docentes + PDF -->
+        <!-- Sección 01: Consejos Docentes + Visualizador de PDF -->
         <section class="section-consejos">
             <div class="container">
                 <div class="tag anim-tag">01 · Concepto</div>
@@ -89,12 +97,11 @@
             </div>
         </section>
 
-        <!-- Divider -->
         <div class="section-divider">
             <div class="divider-line"></div>
         </div>
 
-        <!-- Video -->
+        <!-- Sección 02: Vídeo YouTube -->
         <section class="section-video">
             <div class="container">
                 <div class="tag anim-tag">02 · Patrimonio</div>
@@ -111,7 +118,7 @@
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- Pie de Página y Créditos -->
         <footer>
             <div class="container">
                 <div class="footer-top">
@@ -143,7 +150,7 @@
 
     </div>
 
-    <!-- GSAP -->
+    <!-- Librerías de Animación GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
